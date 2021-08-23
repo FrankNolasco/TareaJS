@@ -1,0 +1,50 @@
+{% extends 'template.html' %}
+{% block content %}
+    <div class="card col-md-4 p-3 d-flex m-auto">
+        <form class="row g-3 needs-validation" novalidate id="login-validation">
+          <div class="col-md-12">
+            <label for="validationCustomUsername" class="form-label">Usuario</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustomUsername"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor ingrese su nombre de usuario.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12  mt-3">
+            <label for="validationPassword" class="form-label"
+              >Contraseña</label
+            >
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend"
+                >
+                  <i class="fa fa-key"></i>
+              </span>
+              <input
+                type="password"
+                class="form-control"
+                id="validationPassword"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <div class="invalid-feedback">
+                Por favor ingrese su contraseña.
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary col-12" type="submit">
+              Submit form
+            </button>
+          </div>
+        </form>
+        <script src="../static/functions/form.js"></script>
+      </div>
+{% endblock %}

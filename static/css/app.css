@@ -1,0 +1,31 @@
+.navbar-nav {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+.my_footer {
+    background-color: gray;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 5px;
+
+}
+
+.nav-item-with-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.nav-item-with-icon img {
+    width: 50px;
+}

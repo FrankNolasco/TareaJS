@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/f2af2bae7b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/app.css">
+
+    <title>TAREA MULTIVENTANA </title>
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            {% if login %}
+            <a class="navbar-br nav-item-with-icon" href="{{url_for('home')}}">
+                <img class="align-self-center" src="/static/images/logo_unp.png" alt=""/>
+            </a>
+            {% else %}
+            <a class="navbar-br nav-item-with-icon" href="{{url_for('init')}}">
+                <img class="align-self-center" src="/static/images/logo_unp.png" alt=""/>
+            </a>
+            {% endif %}
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {% if login %}
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-home"></i>
+                        <a class="nav-link" href="{{url_for('home')}}">Inicio</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-users"></i>
+                        <a class="nav-link" href="{{url_for('clients')}}">Clientes</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-box"></i>
+                        <a class="nav-link" href="{{url_for('products')}}">Productos</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-chart-line"></i>
+                        <a class="nav-link" href="{{url_for('reportSale')}}">Reporte de ventas</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-chart-bar"></i>
+                        <a class="nav-link" href="{{url_for('reportShop')}}">Reporte de compras</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-sign-out-alt"></i>
+                        <a class="nav-link" href="{{url_for('init')}}">Cerrar Sesión</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-home"></i>
+                        <a class="nav-link" href="{{url_for('init')}}">Inicio</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-user-lock"></i>
+                        <a class="nav-link" href="{{url_for('login')}}">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item nav-item-with-icon">
+                        <i class="fa fa-user-plus"></i>
+                        <a class="nav-link" href="{{url_for('register')}}">Registrar</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5" style="min-height: 40vh">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer class="my_footer mt-5">
+      <span>Universidad Nacional de Piura - 2021</span>
+      <span>Curso de Tecnología Web</span>
+      <span>Prof. Arturo Sandoval Rivera</span>
+      <h4>INTEGRANTES</h4>
+      <span>Frank Nolasco Velasquez</span>
+      <span>Cristhian Patiño Cruz</span>
+      <span>Cristhian Saavedra Erazo</span>
+      <span>Simon Tavara Yarleque</span>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
