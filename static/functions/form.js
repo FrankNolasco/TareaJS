@@ -26,8 +26,12 @@ function onSubmit (e) {
   let password = document.getElementById("validationPassword")
   let user = document.getElementById("validationCustomUsername")
   if(password.value && user.value){
-    window.history.pushState(false,"","/home")
-    window.history.go(0)
+    if(user.value ==="admin" && password.value === "12345") {
+      window.history.pushState(false,"","/home")
+      window.history.go(0)
+    }else{
+      alert("Usuario y/o contraseña invalido.")
+    }
   }
 }
 
